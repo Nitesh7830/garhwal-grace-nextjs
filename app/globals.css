@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts */
+:root {
+  --primary: #b91c1c;
+  --primary-dark: #7a1c1c;
+  --accent: #fcd34d;
+  --light: #fffaf0;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+.section {
+  @apply py-20 md:py-24;
+}
+
+.section-title {
+  @apply text-center mb-10;
+}
+.section-title h2 {
+  @apply text-3xl md:text-4xl font-semibold text-primaryDark inline-block relative;
+}
+.section-title h2::after {
+  content: "";
+  @apply absolute left-1/2 -bottom-3 -translate-x-1/2 w-20 h-[3px] bg-gradient-to-r from-primary to-accent;
+}
+
+/* Animations */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal-up.show {
+  opacity: 1;
+  transform: translate(0);
+}
